@@ -1,8 +1,10 @@
 document.querySelector('form').addEventListener('submit', event => {
     event.preventDefault();
 
-    const input = document.querySelector('#message-input');
-    const encrypted = btoa(input.value);
+    const msgInput = document.querySelector('#message-input');
+    const encrypted = btoa(msgInput.value);
 
-    document.querySelector('#link-input').value = encrypted;
+    const linkInput = document.querySelector('#link-input');
+    linkInput.value = `${window.location}#${encrypted}`;
+    linkInput.select();
 });
